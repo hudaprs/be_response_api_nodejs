@@ -40,3 +40,17 @@ exports.error = (message, statusCode) => {
     error: true
   };
 };
+
+/**
+ * @desc    Send validation response
+ * @param   {object | array} errors
+ */
+exports.validation = (errors) => {
+  return {
+    message: "Validation errors",
+    error: true,
+    code: 422,
+    errors
+  };
+};
+
