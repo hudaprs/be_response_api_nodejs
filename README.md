@@ -1,6 +1,29 @@
 # Response API with NodeJS
 
-# Exampe Response
+Make your API nicer and readable, Version 1.0.0
+
+## Usage
+
+```javascript
+// Import the responseApi.js file
+const { success, error } = require('./responseApi');
+
+// Make a request
+app.get('/', async (req, res) => {
+  // Do with validation here
+  res.status(422).json(validation({username: 'Username is required.'}))
+
+  try {
+    // Dome some with success here
+    res.status(200).json(success('OK', {user: 'Hi, John Doe.'}, res.statusCode));
+  } catch(err) {
+    // Do some with error here
+    res.status(500).json(error('Something went wrong.', res.statusCode);
+  }
+});
+```
+
+## Example Success Response
 
 ```json
 {
@@ -8,23 +31,30 @@
   "error": false,
   "code": 200,
   "results": {
-    "user": "Huda Prasetyo"
+    "user": "Hi, John Doe."
   }
 }
 ```
 
-# Usage
+## Example Error Response
 
-```javascript
-const { success, error } = require('./responseApi');
+```json
+{
+  "message": "Something went wrong",
+  "error": true,
+  "code": 500
+}
+```
 
-app.get('/', async (req, res) => {
-  try {
-    // Dome some with success here
-    res.json(success('OK', {user: 'Huda Prasetyo'}, res.statusCode));
-  } catch(err) {
-    // Do some with error here
-    res.json(error('Something went wrong', res.statusCode);
+## Example Validation Response
+
+```json
+{
+  "message": "Something went wrong",
+  "error": true,
+  "code": 422,
+  "errors": {
+    "username": "Username is required"
   }
-});
+}
 ```

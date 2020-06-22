@@ -5,6 +5,7 @@
  */
 
 /**
+ * @desc    Send any success response
  *
  * @param   {string} message
  * @param   {object | array} results
@@ -20,6 +21,7 @@ exports.success = (message, results, statusCode) => {
 };
 
 /**
+ * @desc    Send any error response
  *
  * @param   {string} message
  * @param   {number} statusCode
@@ -42,7 +44,8 @@ exports.error = (message, statusCode) => {
 };
 
 /**
- * @desc    Send validation response
+ * @desc    Send any validation response
+ *
  * @param   {object | array} errors
  */
 exports.validation = (errors) => {
@@ -53,4 +56,3 @@ exports.validation = (errors) => {
     errors
   };
 };
-
