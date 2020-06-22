@@ -27,7 +27,10 @@ exports.success = (message, results, statusCode) => {
  * @param   {number} statusCode
  */
 exports.error = (message, statusCode) => {
-  // List of common HTTP request code
+  /**
+   * List of common HTTP request code
+   * @note  You can add more http request code in here
+   */
   const codes = [200, 201, 400, 401, 404, 403, 422, 500];
 
   // Get matched code

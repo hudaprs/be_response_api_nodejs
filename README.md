@@ -6,7 +6,7 @@ Make your API nicer and readable, Version 1.0.0
 
 ```javascript
 // Import the responseApi.js file
-const { success, error } = require('./responseApi');
+const { success, error, validation } = require('./responseApi');
 
 // Make a request
 app.get('/', async (req, res) => {
