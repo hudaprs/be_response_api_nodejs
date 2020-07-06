@@ -2,6 +2,9 @@
 
 Make your API nicer and readable, Version 1.0.0
 
+## Read more about this code right here
+[NodeJS - Make your response API nicely](https://medium.com/dev-genius/nodejs-make-your-api-response-nicely-f562f78cb67)
+
 ## Usage
 
 ```javascript
